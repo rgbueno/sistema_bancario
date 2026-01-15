@@ -1,5 +1,8 @@
-from conta import Conta
-from transacao import Transacao
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from transacao import Transacao
+    from conta import Conta
 
 class Cliente:
 

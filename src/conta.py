@@ -1,6 +1,10 @@
-from cliente import Cliente
-from conta import Conta
+from __future__ import annotations
 from historico import Historico
+
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from cliente import Cliente
 
 class Conta:
 
