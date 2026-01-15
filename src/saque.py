@@ -1,3 +1,4 @@
+from __future__ import annotations
 from transacao import Transacao
 
 class Saque(Transacao):

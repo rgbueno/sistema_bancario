@@ -1,3 +1,4 @@
+from __future__ import annotations
 from conta import Conta
 
 class ContaCorrente(Conta):
