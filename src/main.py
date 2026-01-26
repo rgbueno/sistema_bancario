@@ -1,5 +1,6 @@
 import textwrap
 from pessoa_fisica import PessoaFisica
+from conta_corrente import ContaCorrente
 
 
 def menu():
@@ -90,7 +91,7 @@ def criar_conta(agencia, numero_conta, usuarios):
 
     if usuario:
         print("\n=== Conta criada com sucesso! ===")
-        return {"agencia": agencia, "numero_conta": numero_conta, "usuario": usuario}
+        return ContaCorrente(limite=500, limite_saques=3, saldo=0, numero=numero_conta, agencia=agencia, cliente=usuario, historico=None)
 
     print("\n@@@ Usuário não encontrado, fluxo de criação de conta encerrado! @@@")
 
@@ -98,9 +99,9 @@ def criar_conta(agencia, numero_conta, usuarios):
 def listar_contas(contas):
     for conta in contas:
         linha = f"""\
-            Agência:\t{conta['agencia']}
-            C/C:\t\t{conta['numero_conta']}
-            Titular:\t{conta['usuario']['nome']}
+            Agência:\t{conta.agencia}
+            C/C:\t\t{conta.numero}
+            Titular:\t{conta.cliente.nome}
         """
         print("=" * 100)
         print(textwrap.dedent(linha))

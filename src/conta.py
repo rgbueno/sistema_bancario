@@ -15,8 +15,45 @@ class Conta:
         self._cliente = cliente
         self._historico = historico
 
+    @property
     def saldo(self) -> float:
-        return None
+        return self._saldo
+    
+    @saldo.setter
+    def saldo(self, saldo: float) -> None:
+        self._saldo = saldo
+    
+    @property
+    def numero(self) -> int:
+        return self._numero
+    
+    @numero.setter
+    def numero(self, numero: int) -> None -> None:
+        self._numero = numero
+    
+    @property
+    def agencia(self) -> str:
+        return self._agencia
+    
+    @agencia.setter
+    def agencia(self, agencia: str) -> None:
+        self._agencia = agencia
+    
+    @property
+    def cliente(self) -> "Cliente":
+        return self._cliente
+    
+    @cliente.setter
+    def cliente(self, cliente: "Cliente") -> None:
+        self._cliente = cliente
+    
+    @property
+    def historico(self) -> Historico:
+        return self._historico
+    
+    @historico.setter
+    def historico(self, historico: Historico) -> None:
+        self._historico = historico
 
     def nova_conta(self, cliente: Cliente, numero: int) -> Conta:
         return None

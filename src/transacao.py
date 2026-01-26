@@ -5,8 +5,16 @@ if TYPE_CHECKING:
 
 class Transacao:
     def __init__(self):
-        pass
+        self._timestamp: str = ""
+    
+    @property
+    def timestamp(self) -> str:
+        return self._timestamp
+    
+    @timestamp.setter
+    def timestamp(self, timestamp: str) -> None:
+        self._timestamp = timestamp
 
-    def registrar(self, conta: "Conta"):
+    def registrar(self, conta: "Conta") -> None:
         pass
     
